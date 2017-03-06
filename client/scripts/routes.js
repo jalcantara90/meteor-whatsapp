@@ -1,6 +1,7 @@
 import { Config } from 'angular-ecmascript/module-helpers';
 
 import chatsTemplateUrl from '../templates/chats.html';
+import chatTemplateUrl from '../templates/chat.html';
 import tabsTemplateUrl from '../templates/tabs.html';
 
 export default class RoutesConfig extends Config {
@@ -18,6 +19,15 @@ export default class RoutesConfig extends Config {
                         templateUrl: chatsTemplateUrl,
                         controller: 'ChatsCtrl as chats'
                     }
+                }
+            })
+            .state('tab.chat', {
+                url: '/chats/:chatId',
+                views: {
+                    'tab-chats': {
+                        templateUrl: chatTemplateUrl,
+                        controller: 'ChatCtrl as chat'
+                    }  
                 }
             });
 
